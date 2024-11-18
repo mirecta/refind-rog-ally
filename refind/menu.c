@@ -587,14 +587,17 @@ UINTN RunGenericMenu(IN REFIT_MENU_SCREEN *Screen,
             switch (key.UnicodeChar) {
                 case CHAR_LINEFEED:
                 case CHAR_CARRIAGE_RETURN:
+                case CHAR_ALLY_X:
+
                 case ' ':
                     MenuExit = MENU_EXIT_ENTER;
                     break;
                 case CHAR_BACKSPACE:
+                case CHAR_ALLY_B:
                     MenuExit = MENU_EXIT_ESCAPE;
                     break;
                 case '+':
-                case CHAR_TAB:
+                //case CHAR_TAB: //ally x conflict
                     MenuExit = MENU_EXIT_DETAILS;
                     break;
                 case '-':
@@ -602,6 +605,12 @@ UINTN RunGenericMenu(IN REFIT_MENU_SCREEN *Screen,
                     break;
                 case '\\':
                     egScreenShot();
+                    break;
+                case CHAR_ALLY_LEFT:
+                    UpdateScroll(&State, SCROLL_LINE_LEFT);
+                    break;
+                case CHAR_ALLY_RIGHT:
+                    UpdateScroll(&State, SCROLL_LINE_RIGHT);
                     break;
                 default:
                     KeyAsString[0] = key.UnicodeChar;

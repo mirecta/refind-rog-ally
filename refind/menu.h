@@ -102,6 +102,11 @@ typedef struct {
 #define INPUT_TIMEOUT     (2)
 #define INPUT_TIMER_ERROR (3)
 
+#define CHAR_ALLY_LEFT                  0x0064
+#define CHAR_ALLY_RIGHT                 0x0009
+#define CHAR_ALLY_X                     0x0070
+#define CHAR_ALLY_B                     0x006E
+
 // Maximum length of a text string in certain menus
 #define MAX_LINE_LENGTH 65
 
